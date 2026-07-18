@@ -1,0 +1,52 @@
+name: Build iOS IPA 
+
+on:
+  workflow_dispatch: # ช่วยให้คุณพี่กดสั่งบิลด์แอปเองได้จากหน้าเว็บ GitHub
+
+jobs:
+  build:
+    runs-on: macos-14 # อัปเดตเป็น macOS 14 (Apple Silicon M-series Core)
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      - name: Build Web Code and Sync
+        run: |
+          # สร้างโฟลเดอร์ iOS ขึ้นมาใหม่ในกรณีที่ใน Git ไม่มี
+          npx cap add ios || true
+          # ทำการอัปเดตโค้ดเว็บและปลั๊กอินเข้าตัวโปรเจกต์ iOS
+          npx cap sync ios
+
+      - name: Compile iOS Project to .app
+        run: |
+          # บิลด์แอปแบบไม่ใช้ใบรับรอง Apple Developer
+          xcodebuild -workspace ios/App/App.xcworkspace \
+                     -scheme App \
+                     -configuration Release \
+                     -sdk iphoneos \
+                     CONFIGURATION_BUILD_DIR=$GITHUB_WORKSPACE/build \
+                     CODE_SIGNING_ALLOWED=NO \
+                     CODE_SIGNING_REQUIRED=NO \
+                     clean build
+
+      - name: Package .app into .ipa (The Sideload Hack)
+        run: |
+          # สร้างโฟลเดอร์ Payload และนำแอปไปแพ็กเป็น .ipa ตามมาตรฐานของ iOS
+          mkdir -p Payload
+          cp -r $GITHUB_WORKSPACE/build/App.app Payload/
+          zip -r KPT-kds.ipa Payload
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: KPT-kds
+          path: KPT-kds.ipa
