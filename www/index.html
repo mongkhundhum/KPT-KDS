@@ -2,11 +2,10 @@
 <html lang="th" class="h-full">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Klong Pinto - Premium Kitchen Display System</title>
     <!-- Favicon Data URI to prevent 404 error and add a premium culinary icon -->
-    <link rel="icon" type="image/png"href="https://img2.pic.in.th/Klong-Pin-To-37.253-x-20.32-cm.png">
-    <link rel="apple-touch-icon" href="href="https://img2.pic.in.th/Klong-Pin-To-37.253-x-20.32-cm.png">
+    <link rel="icon" type="image/png" href="https://img2.pic.in.th/Klong-Pin-To-37.253-x-20.32-cm.png">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Kanit -->
@@ -24,24 +23,18 @@
                     fontFamily: {
                         sans: ['Kanit', 'sans-serif'],
                     },
+                    screens: {
+                        'xs': '450px',
+                    }
                 }
             }
         }
     </script>
     <style>
-	@font-face {
-    		font-family: 'Kanit';
-    		src: url('fonts/Kanit-Regular.ttf') format('truetype');
-   		font-weight: 400;
-	}
-	@font-face {
-   		 font-family: 'Kanit';
-   		 src: url('fonts/Kanit-Bold.ttf') format('truetype');
-   		 font-weight: 700;
-	}
         body {
             font-family: 'Kanit', sans-serif;
             transition: background-color 0.3s, color 0.3s;
+            -webkit-tap-highlight-color: transparent;
         }
         /* Custom Scrollbar for elegant look */
         ::-webkit-scrollbar {
@@ -68,80 +61,80 @@
         }
     </style>
 </head>
-<body class="h-full bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 flex flex-col overflow-hidden">
+<body class="h-full bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 flex flex-col overflow-x-hidden sm:overflow-hidden pb-16 sm:pb-0">
 
     <!-- Top Premium Navigation Header -->
-    <header class="pt-[env(safe-area-inset-top)] bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 pb-3 flex-none flex flex-wrap items-center justify-between gap-4 shadow-sm z-10">
+    <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 sm:px-6 py-3 flex-none flex flex-wrap items-center justify-between gap-3 shadow-sm z-10">
         <div class="flex items-center space-x-3">
-            <div class="bg-amber-500 text-white p-2.5 rounded-2xl shadow-lg shadow-amber-500/20 flex items-center justify-center">
+            <div class="bg-amber-500 text-white p-2.5 rounded-2xl shadow-lg shadow-amber-500/20 flex items-center justify-center shrink-0">
                 <!-- Premium Custom SVG Kitchen Logo -->
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
             </div>
             <div>
-                <h1 class="text-xl font-bold tracking-tight bg-gradient-to-r from-amber-600 to-amber-500 dark:from-amber-400 dark:to-yellow-300 bg-clip-text text-transparent">
+                <h1 class="text-base sm:text-xl font-bold tracking-tight bg-gradient-to-r from-amber-600 to-amber-500 dark:from-amber-400 dark:to-yellow-300 bg-clip-text text-transparent">
                     ระบบห้องครัวร้านกล่องปิ่นโต
                 </h1>
-                <p class="text-xs text-slate-400 dark:text-slate-500 font-medium">Kitchen Display System </p>
+                <p class="text-[10px] sm:text-xs text-slate-400 dark:text-slate-500 font-medium">Kitchen Display System </p>
             </div>
         </div>
 
         <!-- System Stats Hub -->
-        <div class="hidden lg:flex items-center space-x-6 text-sm">
-            <div class="bg-slate-100 dark:bg-slate-800/60 px-4 py-2 rounded-xl flex items-center space-x-3">
-                <span class="flex h-2.5 w-2.5 relative">
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-6 text-xs lg:text-sm">
+            <div class="bg-slate-100 dark:bg-slate-800/60 px-3 py-1.5 rounded-xl flex items-center space-x-2">
+                <span class="flex h-2 w-2 relative">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
                 <span class="font-medium text-slate-600 dark:text-slate-300" id="sync-status">ซิงค์อัตโนมัติ: เปิดใช้งาน</span>
             </div>
-            <div class="flex items-center space-x-4">
-                <div class="text-center border-r border-slate-200 dark:border-slate-800 pr-4">
-                    <span class="block text-xs text-slate-400">ลงบิลแล้ว</span>
-                    <span class="text-lg font-bold text-blue-500" id="stat-billed">0</span>
+            <div class="flex items-center space-x-3 lg:space-x-4">
+                <div class="text-center border-r border-slate-200 dark:border-slate-800 pr-3 lg:pr-4">
+                    <span class="block text-[10px] text-slate-400">ลงบิลแล้ว</span>
+                    <span class="text-base font-bold text-blue-500" id="stat-billed">0</span>
                 </div>
-                <div class="text-center border-r border-slate-200 dark:border-slate-800 pr-4">
-                    <span class="block text-xs text-slate-400">กำลังปรุง</span>
-                    <span class="text-lg font-bold text-amber-500" id="stat-cooking">0</span>
+                <div class="text-center border-r border-slate-200 dark:border-slate-800 pr-3 lg:pr-4">
+                    <span class="block text-[10px] text-slate-400">กำลังปรุง</span>
+                    <span class="text-base font-bold text-amber-500" id="stat-cooking">0</span>
                 </div>
-                <div class="text-center border-r border-slate-200 dark:border-slate-800 pr-4">
-                    <span class="block text-xs text-slate-400">รอส่งอาหาร</span>
-                    <span class="text-lg font-bold text-emerald-500" id="stat-ready">0</span>
+                <div class="text-center border-r border-slate-200 dark:border-slate-800 pr-3 lg:pr-4">
+                    <span class="block text-[10px] text-slate-400">รอส่งอาหาร</span>
+                    <span class="text-base font-bold text-emerald-500" id="stat-ready">0</span>
                 </div>
                 <div class="text-center">
-                    <span class="block text-xs text-slate-400 font-semibold text-slate-400">เสร็จวันนี้</span>
-                    <span class="text-lg font-bold text-slate-500 dark:text-slate-400" id="stat-completed">0</span>
+                    <span class="block text-[10px] text-slate-400 font-semibold text-slate-400">เสร็จวันนี้</span>
+                    <span class="text-base font-bold text-slate-500 dark:text-slate-400" id="stat-completed">0</span>
                 </div>
             </div>
         </div>
 
         <!-- Controls Side & Clock -->
-        <div class="flex items-center gap-3">
-            <div class="text-right hidden sm:block mr-2">
-                <p id="live-time" class="text-sm font-bold tracking-wider text-slate-700 dark:text-slate-200">00:00:00</p>
-                <p id="live-date" class="text-[10px] text-slate-400 dark:text-slate-500 font-medium">รอโหลดวันที่...</p>
+        <div class="flex items-center gap-2 sm:gap-3">
+            <div class="text-right hidden sm:block mr-1">
+                <p id="live-time" class="text-xs sm:text-sm font-bold tracking-wider text-slate-700 dark:text-slate-200">00:00:00</p>
+                <p id="live-date" class="text-[9px] sm:text-[10px] text-slate-400 dark:text-slate-500 font-medium">รอโหลดวันที่...</p>
             </div>
             
             <!-- Dark/Light Toggle -->
-            <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-all duration-200" title="เปลี่ยนโหมดสี">
+            <button onclick="toggleDarkMode()" class="p-2 sm:p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-all duration-200" title="เปลี่ยนโหมดสี">
                 <i class="fa-solid fa-moon dark:hidden"></i>
                 <i class="fa-solid fa-sun hidden dark:block"></i>
             </button>
 
             <!-- Configuration Trigger Button -->
-            <button onclick="toggleModal('config-modal')" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-all duration-200" title="ตั้งค่าระบบ">
+            <button onclick="toggleModal('config-modal')" class="p-2 sm:p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-all duration-200" title="ตั้งค่าระบบ">
                 <i class="fa-solid fa-sliders"></i>
             </button>
         </div>
     </header>
 
-    <!-- Sub-Navbar: Filters, Search & Inline Menu Summary Aggregator (Green Line Spot) -->
-    <section class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-3 flex-none flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between shadow-sm">
+    <!-- Sub-Navbar: Filters, Search & Inline Menu Summary Aggregator -->
+    <section class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 sm:px-6 py-3 flex-none flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between shadow-sm">
         <!-- Live Filter Control Grid -->
-        <div class="flex flex-wrap items-center gap-3 flex-1 min-w-0">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3 flex-1 min-w-0">
             <!-- Search input -->
-            <div class="relative w-full sm:w-56 shrink-0">
+            <div class="relative w-full sm:w-48 lg:w-56 shrink-0">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
                     <i class="fa-solid fa-magnifying-glass text-xs"></i>
                 </span>
@@ -150,9 +143,9 @@
 
             <!-- Date View Filter Toggle -->
             <div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl text-xs font-semibold shrink-0">
-                <button onclick="setDateRange('today')" id="date-btn-today" class="px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm">วันนี้</button>
-                <button onclick="setDateRange('all')" id="date-btn-all" class="px-3 py-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all">ทั้งหมด</button>
-                <button onclick="toggleModal('custom-date-modal')" id="date-btn-custom" class="px-3 py-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all flex items-center space-x-1">
+                <button onclick="setDateRange('today')" id="date-btn-today" class="px-2.5 sm:px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm">วันนี้</button>
+                <button onclick="setDateRange('all')" id="date-btn-all" class="px-2.5 sm:px-3 py-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all">ทั้งหมด</button>
+                <button onclick="toggleModal('custom-date-modal')" id="date-btn-custom" class="px-2.5 sm:px-3 py-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all flex items-center space-x-1">
                     <i class="fa-regular fa-calendar-days"></i>
                     <span id="custom-date-label">ระบุวัน</span>
                 </button>
@@ -160,85 +153,85 @@
 
             <!-- Sort Direction Filter Toggle -->
             <div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl text-xs font-semibold shrink-0">
-                <button onclick="setSortOrder('fifo')" id="sort-btn-fifo" class="px-3 py-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all" title="First In First Out">คิวเก่าสุดก่อน</button>
-                <button onclick="setSortOrder('lifo')" id="sort-btn-lifo" class="px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm" title="Last In First Out">คิวใหม่สุดก่อน</button>
+                <button onclick="setSortOrder('fifo')" id="sort-btn-fifo" class="px-2.5 sm:px-3 py-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all" title="First In First Out">คิวเก่าสุดก่อน</button>
+                <button onclick="setSortOrder('lifo')" id="sort-btn-lifo" class="px-2.5 sm:px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm" title="Last In First Out">คิวใหม่สุดก่อน</button>
             </div>
 
-            <!-- GREEN LINE POSITION: Real-time Inline Menu Item Summary Widget -->
-            <div id="aggregated-menu-list" class="flex items-center space-x-2 overflow-x-auto select-none py-1 flex-1 pr-4 min-w-0">
+            <!-- Real-time Inline Menu Item Summary Widget -->
+            <div id="aggregated-menu-list" class="flex items-center space-x-2 overflow-x-auto select-none py-1 flex-1 pr-2 min-w-0">
                 <span class="text-slate-400 text-xs font-light">ไม่มีรายการอาหารค้างปรุงในขณะนี้</span>
             </div>
         </div>
 
         <!-- Reset & Re-sync Manual Actions -->
-        <div class="flex items-center gap-2 shrink-0">
-            <button onclick="fetchOrders()" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-semibold rounded-xl flex items-center space-x-2 transition-all" title="ดึงข้อมูลออเดอร์ใหม่ทันที">
+        <div class="flex items-center gap-2 shrink-0 justify-between sm:justify-end mt-1 md:mt-0">
+            <button onclick="fetchOrders()" class="flex-1 sm:flex-initial px-3 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-semibold rounded-xl flex items-center justify-center space-x-2 transition-all" title="ดึงข้อมูลออเดอร์ใหม่ทันที">
                 <i class="fa-solid fa-arrows-rotate" id="sync-icon"></i>
                 <span>รีเฟรชข้อมูล</span>
             </button>
-            <button onclick="toggleModal('confirm-clear-modal')" class="px-3.5 py-2 bg-rose-50 hover:bg-rose-100 dark:bg-rose-950/40 dark:hover:bg-rose-900/40 text-rose-600 dark:text-rose-400 text-xs font-semibold rounded-xl flex items-center space-x-2 transition-all" title="เคลียร์ออเดอร์สำเร็จเพื่อเริ่มวันใหม่">
+            <button onclick="toggleModal('confirm-clear-modal')" class="flex-1 sm:flex-initial px-3 py-2 bg-rose-50 hover:bg-rose-100 dark:bg-rose-950/40 dark:hover:bg-rose-900/40 text-rose-600 dark:text-rose-400 text-xs font-semibold rounded-xl flex items-center justify-center space-x-2 transition-all" title="เคลียร์ออเดอร์สำเร็จเพื่อเริ่มวันใหม่">
                 <i class="fa-solid fa-trash-can"></i>
                 <span>เคลียร์ประวัติเดลิเวอรี</span>
             </button>
         </div>
     </section>
 
-    <!-- MAIN KANBAN BOARD SYSTEM -->
-    <main class="flex-1 overflow-x-auto overflow-y-hidden p-6 min-h-0">
-        <div class="h-[calc(100vh-210px)] min-h-[500px] min-w-[1200px] grid grid-cols-4 gap-5">
+    <!-- MAIN KANBAN BOARD SYSTEM (Responsive Grid & Tabs for Mobile) -->
+    <main class="flex-1 overflow-y-auto sm:overflow-y-hidden p-4 sm:p-6 min-h-0">
+        <div class="h-full sm:h-[calc(100vh-210px)] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
             
             <!-- COLUMN 1: BILLED (ลงบิลแล้ว) -->
-            <div class="flex flex-col h-full bg-slate-100/70 dark:bg-slate-900/40 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 p-4 min-h-0">
-                <div class="flex items-center justify-between mb-4 flex-none">
+            <div id="wrapper-billed" class="kds-column flex flex-col h-full bg-slate-100/70 dark:bg-slate-900/40 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 p-4 min-h-[300px] sm:min-h-0">
+                <div class="flex items-center justify-between mb-3 flex-none">
                     <div class="flex items-center space-x-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
                         <h2 class="font-bold text-sm tracking-wide text-slate-700 dark:text-slate-300">ลงบิลแล้ว (BILLED)</h2>
                     </div>
                     <span class="bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 text-xs font-bold px-2.5 py-1 rounded-full" id="badge-billed">0</span>
                 </div>
-                <div class="flex-1 overflow-y-auto space-y-3 pr-1 min-h-0" id="col-billed">
+                <div class="flex-1 sm:overflow-y-auto space-y-3 pr-1 min-h-0" id="col-billed">
                     <!-- Cards will render here dynamically -->
                 </div>
             </div>
 
             <!-- COLUMN 2: COOKING (กำลังปรุง) -->
-            <div class="flex flex-col h-full bg-slate-100/70 dark:bg-slate-900/40 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 p-4 min-h-0">
-                <div class="flex items-center justify-between mb-4 flex-none">
+            <div id="wrapper-cooking" class="kds-column flex flex-col h-full bg-slate-100/70 dark:bg-slate-900/40 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 p-4 min-h-[300px] sm:min-h-0">
+                <div class="flex items-center justify-between mb-3 flex-none">
                     <div class="flex items-center space-x-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
                         <h2 class="font-bold text-sm tracking-wide text-slate-700 dark:text-slate-300">กำลังปรุง (COOKING)</h2>
                     </div>
                     <span class="bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 text-xs font-bold px-2.5 py-1 rounded-full" id="badge-cooking">0</span>
                 </div>
-                <div class="flex-1 overflow-y-auto space-y-3 pr-1 min-h-0" id="col-cooking">
+                <div class="flex-1 sm:overflow-y-auto space-y-3 pr-1 min-h-0" id="col-cooking">
                     <!-- Cards will render here dynamically -->
                 </div>
             </div>
 
             <!-- COLUMN 3: READY TO SERVE (รอส่ง) -->
-            <div class="flex flex-col h-full bg-slate-100/70 dark:bg-slate-900/40 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 p-4 min-h-0">
-                <div class="flex items-center justify-between mb-4 flex-none">
+            <div id="wrapper-ready" class="kds-column flex flex-col h-full bg-slate-100/70 dark:bg-slate-900/40 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 p-4 min-h-[300px] sm:min-h-0">
+                <div class="flex items-center justify-between mb-3 flex-none">
                     <div class="flex items-center space-x-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                         <h2 class="font-bold text-sm tracking-wide text-slate-700 dark:text-slate-300">รอส่ง / รอไรเดอร์ (READY)</h2>
                     </div>
                     <span class="bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-full" id="badge-ready">0</span>
                 </div>
-                <div class="flex-1 overflow-y-auto space-y-3 pr-1 min-h-0" id="col-ready">
+                <div class="flex-1 sm:overflow-y-auto space-y-3 pr-1 min-h-0" id="col-ready">
                     <!-- Cards will render here dynamically -->
                 </div>
             </div>
 
             <!-- COLUMN 4: COMPLETED (เสร็จสิ้นวันนี้) -->
-            <div class="flex flex-col h-full bg-slate-100/70 dark:bg-slate-900/40 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 p-4 min-h-0">
-                <div class="flex items-center justify-between mb-4 flex-none">
+            <div id="wrapper-completed" class="kds-column flex flex-col h-full bg-slate-100/70 dark:bg-slate-900/40 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 p-4 min-h-[300px] sm:min-h-0">
+                <div class="flex items-center justify-between mb-3 flex-none">
                     <div class="flex items-center space-x-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
                         <h2 class="font-bold text-sm tracking-wide text-slate-700 dark:text-slate-300">เสร็จสิ้นวันนี้ (COMPLETED)</h2>
                     </div>
                     <span class="bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold px-2.5 py-1 rounded-full" id="badge-completed">0</span>
                 </div>
-                <div class="flex-1 overflow-y-auto space-y-3 pr-1 min-h-0" id="col-completed">
+                <div class="flex-1 sm:overflow-y-auto space-y-3 pr-1 min-h-0" id="col-completed">
                     <!-- Cards will render here dynamically -->
                 </div>
             </div>
@@ -246,21 +239,41 @@
         </div>
     </main>
 
+    <!-- MOBILE BOTTOM NAVIGATION TABS (Visible only on Mobile Screen) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex justify-around items-center py-2 z-40 md:hidden shadow-lg">
+        <button onclick="switchMobileTab('billed')" id="tab-billed" class="flex flex-col items-center justify-center text-blue-500 font-medium text-xs flex-1 py-1">
+            <i class="fa-solid fa-receipt text-lg mb-0.5"></i>
+            <span>ลงบิล (<span id="tab-count-billed">0</span>)</span>
+        </button>
+        <button onclick="switchMobileTab('cooking')" id="tab-cooking" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-medium text-xs flex-1 py-1">
+            <i class="fa-solid fa-fire text-lg mb-0.5"></i>
+            <span>กำลังปรุง (<span id="tab-count-cooking">0</span>)</span>
+        </button>
+        <button onclick="switchMobileTab('ready')" id="tab-ready" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-medium text-xs flex-1 py-1">
+            <i class="fa-solid fa-bell text-lg mb-0.5"></i>
+            <span>รอส่ง (<span id="tab-count-ready">0</span>)</span>
+        </button>
+        <button onclick="switchMobileTab('completed')" id="tab-completed" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-medium text-xs flex-1 py-1">
+            <i class="fa-solid fa-circle-check text-lg mb-0.5"></i>
+            <span>เสร็จแล้ว (<span id="tab-count-completed">0</span>)</span>
+        </button>
+    </div>
+
     <!-- CONFIGURATION & APP SETTING MODAL -->
-    <div id="config-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl w-[90%] max-w-lg shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-scale-in">
-            <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+    <div id="config-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-scale-in max-h-[90vh] flex flex-col">
+            <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between flex-none">
                 <div class="flex items-center space-x-2">
                     <i class="fa-solid fa-gear text-amber-500 text-lg"></i>
-                    <h3 class="font-bold text-lg">ตั้งค่าการเชื่อมต่อและแจ้งเตือน</h3>
+                    <h3 class="font-bold text-base sm:text-lg">ตั้งค่าการเชื่อมต่อและแจ้งเตือน</h3>
                 </div>
                 <button onclick="toggleModal('config-modal')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <div class="p-6 space-y-5">
+            <div class="p-5 space-y-4 overflow-y-auto flex-1 text-xs sm:text-sm">
                 <!-- Sync API section -->
                 <div>
                     <label class="block text-xs font-bold text-slate-500 mb-2 uppercase">Google Apps Script Web App URL</label>
-                    <input type="text" id="api-url-input" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-800 text-sm border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:border-amber-500 dark:focus:border-amber-500 transition-all">
+                    <input type="text" id="api-url-input" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:border-amber-500 dark:focus:border-amber-500 transition-all">
                     <p class="text-[10px] text-slate-400 mt-1.5">วาง URL ของ Google Apps Script ที่ลงเว็บแอปแล้วที่นี่ เพื่อดึงข้อมูลประวัติเดลิเวอรีจริง</p>
                 </div>
 
@@ -274,7 +287,7 @@
                 </div>
 
                 <!-- Text-to-Speech Controls -->
-                <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 space-y-4">
+                <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 space-y-3">
                     <div class="flex items-center justify-between">
                         <span class="text-xs font-bold text-slate-700 dark:text-slate-300">ระบบเสียงพูดภาษาไทย (Thai TTS)</span>
                         <label class="relative inline-flex items-center cursor-pointer">
@@ -295,19 +308,19 @@
                 </div>
 
                 <!-- Audio Sound Testing -->
-                <div class="flex items-center justify-between">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <span class="text-xs font-bold text-slate-500">ทดสอบเสียงเอฟเฟกต์แอปพลิเคชัน</span>
-                    <div class="flex space-x-2">
-                        <button onclick="playChimeSound('new-order')" class="px-2.5 py-1.5 bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 text-[10px] font-bold rounded-lg border border-blue-100 dark:border-blue-900/30">
+                    <div class="flex gap-2">
+                        <button onclick="playChimeSound('new-order')" class="flex-1 sm:flex-initial px-2.5 py-1.5 bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 text-[10px] font-bold rounded-lg border border-blue-100 dark:border-blue-900/30">
                             เสียงกริ่งใหม่
                         </button>
-                        <button onclick="testThaiSpeech()" class="px-2.5 py-1.5 bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 text-[10px] font-bold rounded-lg border border-purple-100 dark:border-purple-900/30">
-                            ทดสอบอ่านออกเสียงออเดอร์ใหม่
+                        <button onclick="testThaiSpeech()" class="flex-1 sm:flex-initial px-2.5 py-1.5 bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 text-[10px] font-bold rounded-lg border border-purple-100 dark:border-purple-900/30">
+                            ทดสอบอ่านออกเสียง
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="p-6 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 flex justify-end space-x-3">
+            <div class="p-5 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 flex justify-end space-x-3 flex-none">
                 <button onclick="toggleModal('config-modal')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-semibold rounded-xl">ยกเลิก</button>
                 <button onclick="saveConfiguration()" class="px-5 py-2 bg-amber-500 hover:bg-amber-600 text-white text-xs font-semibold rounded-xl shadow-lg shadow-amber-500/20">บันทึกค่า</button>
             </div>
@@ -315,22 +328,22 @@
     </div>
 
     <!-- CUSTOM DATE RANGE FILTER MODAL -->
-    <div id="custom-date-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl w-[90%] max-w-sm shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-scale-in">
-            <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+    <div id="custom-date-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-sm shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-scale-in">
+            <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
                 <h3 class="font-bold text-base flex items-center space-x-2">
                     <i class="fa-regular fa-calendar-days text-amber-500"></i>
                     <span>ระบุวันที่สแกนออเดอร์</span>
                 </h3>
                 <button onclick="toggleModal('custom-date-modal')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"><i class="fa-solid fa-xmark text-base"></i></button>
             </div>
-            <div class="p-6 space-y-4">
+            <div class="p-5 space-y-4">
                 <div>
                     <label class="block text-xs text-slate-400 mb-1">กรุณาระบุวันที่ที่ต้องการสืบค้น</label>
                     <input type="date" id="custom-date-picker" class="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-800 text-sm border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:border-amber-500 dark:focus:border-amber-500">
                 </div>
             </div>
-            <div class="p-6 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 flex justify-end space-x-3">
+            <div class="p-5 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 flex justify-end space-x-3">
                 <button onclick="toggleModal('custom-date-modal')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-semibold rounded-xl">ยกเลิก</button>
                 <button onclick="applyCustomDate()" class="px-5 py-2 bg-amber-500 hover:bg-amber-600 text-white text-xs font-semibold rounded-xl shadow-lg shadow-amber-500/20">ตกลง</button>
             </div>
@@ -338,13 +351,13 @@
     </div>
 
     <!-- CUSTOM CONFIRMATION DIALOG -->
-    <div id="confirm-clear-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl w-[90%] max-w-sm shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-scale-in">
+    <div id="confirm-clear-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-sm shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-scale-in">
             <div class="p-6 text-center">
-                <div class="w-16 h-16 bg-rose-100 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
+                <div class="w-14 h-14 bg-rose-100 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-triangle-exclamation text-xl"></i>
                 </div>
-                <h3 class="font-bold text-lg mb-2">ยืนยันการเคลียร์ประวัติ?</h3>
+                <h3 class="font-bold text-base sm:text-lg mb-1">ยืนยันการเคลียร์ประวัติ?</h3>
                 <p class="text-xs text-slate-400 dark:text-slate-500">คุณแน่ใจหรือไม่ที่จะลบรายการอาหารที่จัดส่งเสร็จสมบูรณ์วันนี้ออกจากบอร์ด? การกระทำนี้ไม่สามารถยกเลิกได้</p>
             </div>
             <div class="p-4 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 flex justify-end space-x-3">
@@ -354,16 +367,16 @@
         </div>
     </div>
 
-    <!-- SUMMARY POPUP MODAL (แสดงรายการสรุปสะสมเมนูด่วน) -->
-    <div id="summary-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl w-[90%] max-w-md shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-scale-in animate-duration-200">
-            <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-amber-50/50 dark:bg-amber-950/20">
+    <!-- SUMMARY POPUP MODAL -->
+    <div id="summary-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-md shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-scale-in animate-duration-200">
+            <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-amber-50/50 dark:bg-amber-950/20">
                 <div class="flex items-center space-x-2.5">
                     <div class="bg-amber-500 text-white p-2 rounded-xl flex items-center justify-center">
-                        <i class="fa-solid fa-fire-burner text-lg animate-pulse"></i>
+                        <i class="fa-solid fa-fire-burner text-base sm:text-lg animate-pulse"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-base text-slate-800 dark:text-slate-100">สรุปรายการอาหารสะสมทั้งวัน</h3>
+                        <h3 class="font-bold text-sm sm:text-base text-slate-800 dark:text-slate-100">สรุปรายการอาหารสะสมทั้งวัน</h3>
                         <p class="text-[10px] text-slate-400 dark:text-slate-500 font-medium">รวมจำนวนออเดอร์ทั้งหมดของวัน</p>
                     </div>
                 </div>
@@ -371,16 +384,16 @@
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
-            <div class="p-6 space-y-4">
+            <div class="p-5 space-y-4">
                 <div class="flex justify-between items-center text-xs text-slate-400 dark:text-slate-500">
                     <span>รายการอาหารสะสมทั้งหมดของวัน:</span>
                     <span class="font-bold text-amber-500 bg-amber-50 dark:bg-amber-950/30 px-2 py-0.5 rounded-lg border border-amber-100/50 dark:border-amber-950/30" id="popup-total-text">0 เมนู / 0 จาน</span>
                 </div>
-                <div class="overflow-y-auto max-h-[40vh] space-y-2 pr-1" id="popup-summary-list">
+                <div class="overflow-y-auto max-h-[50vh] space-y-2 pr-1" id="popup-summary-list">
                     <!-- Dynamic popup list rows -->
                 </div>
             </div>
-            <div class="p-6 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 flex justify-end">
+            <div class="p-5 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 flex justify-end">
                 <button onclick="toggleModal('summary-modal')" class="px-5 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-semibold rounded-xl">ปิดหน้าจอ</button>
             </div>
         </div>
@@ -389,18 +402,15 @@
     <!-- CORE SYSTEM SCRIPTS -->
     <script>
         let orders = [];
-        let dateFilterMode = 'today'; // 'today', 'all', 'custom'
+        let dateFilterMode = 'today'; 
         let customDateValue = '';
-        let sortOrder = 'lifo'; // Default to 'lifo' (newest first)
-        let isFirstLoad = true; // Lock sound triggers on initial loading cycle
+        let sortOrder = 'lifo'; 
+        let isFirstLoad = true; 
+        let activeMobileTab = 'billed'; // Mobile Tracker
 
-        // Persist checkbox ticked items map
         let itemTickedMap = JSON.parse(localStorage.getItem('kds_item_ticked_map') || '{}');
-
-        // Default Google Apps Script URL
         const DEFAULT_URL = "https://script.google.com/macros/s/AKfycbxdyOTzgOVeeysPo1kcW8A-VRDihNkqrrp1qNhrOWrv8041rZsvzNn0-1y-RCnsHme2/exec";
 
-        // Settings stored in LocalStorage
         let config = {
             apiUrl: localStorage.getItem('klongPinto_apiUrl') || DEFAULT_URL,
             syncInterval: parseInt(localStorage.getItem('klongPinto_syncInterval')) || 15,
@@ -410,11 +420,8 @@
             theme: localStorage.getItem('klongPinto_theme') || 'light'
         };
 
-        // Application Timers
         let syncTimer = null;
         let clockTimer = null;
-
-        // Web Audio Context for Premium Sound Synths
         let audioCtx = null;
 
         function initAudio() {
@@ -423,12 +430,10 @@
             }
         }
 
-        // Auto-unlock AudioContext on first user interaction to comply with browser autoplay policies
         function unlockAudioContext() {
             initAudio();
             if (audioCtx && audioCtx.state === 'suspended') {
                 audioCtx.resume().then(() => {
-                    console.log("AudioContext resumed successfully.");
                     window.removeEventListener('click', unlockAudioContext);
                     window.removeEventListener('touchstart', unlockAudioContext);
                 });
@@ -440,32 +445,23 @@
         window.addEventListener('click', unlockAudioContext);
         window.addEventListener('touchstart', unlockAudioContext);
 
-        // Beautiful Dynamic Chime Synths using Web Audio API (Highly Premium)
         function playChimeSound(type) {
             try {
                 initAudio();
-                if (audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
-
+                if (audioCtx.state === 'suspended') audioCtx.resume();
                 const now = audioCtx.currentTime;
 
                 if (type === 'new-order') {
-                    // Play sweet ascending high-frequency major chord (New Order Only)
-                    const freqs = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+                    const freqs = [523.25, 659.25, 783.99, 1046.50]; 
                     freqs.forEach((freq, index) => {
                         const osc = audioCtx.createOscillator();
                         const gain = audioCtx.createGain();
-                        
                         osc.type = 'sine';
                         osc.frequency.setValueAtTime(freq, now + index * 0.08);
-                        
                         gain.gain.setValueAtTime(0.15, now + index * 0.08);
                         gain.gain.exponentialRampToValueAtTime(0.001, now + index * 0.08 + 0.6);
-                        
                         osc.connect(gain);
                         gain.connect(audioCtx.destination);
-                        
                         osc.start(now + index * 0.08);
                         osc.stop(now + index * 0.08 + 0.6);
                     });
@@ -475,58 +471,42 @@
             }
         }
 
-        // Thai Text-to-Speech (TTS) Engine - SPEAKS SPECIFIC CLEAN MESSAGE
         function speakThaiMessage(text) {
             if (!config.ttsEnabled) return;
             try {
                 window.speechSynthesis.cancel();
-                
                 const utterance = new SpeechSynthesisUtterance(text);
                 utterance.lang = 'th-TH';
                 utterance.rate = config.ttsRate;
                 utterance.pitch = config.ttsPitch;
-                
                 const voices = window.speechSynthesis.getVoices();
                 const thaiVoice = voices.find(voice => voice.lang.includes('TH') || voice.lang.includes('th'));
-                if (thaiVoice) {
-                    utterance.voice = thaiVoice;
-                }
-                
+                if (thaiVoice) utterance.voice = thaiVoice;
                 window.speechSynthesis.speak(utterance);
             } catch (e) {
                 console.log('TTS Error:', e);
             }
         }
 
-        // Test Speech trigger for Settings dialog
         function testThaiSpeech() {
             speakThaiMessage("มีออเดอร์เข้ามาใหม่ครับ");
         }
 
-        // Clock logic
         function runClock() {
             const timeEl = document.getElementById('live-time');
             const dateEl = document.getElementById('live-date');
-            
             const formatter = () => {
                 const now = new Date();
-                timeEl.innerText = now.toLocaleTimeString('th-TH', { hour12: false });
-                
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                dateEl.innerText = now.toLocaleDateString('th-TH', options);
+                if(timeEl) timeEl.innerText = now.toLocaleTimeString('th-TH', { hour12: false });
+                if(dateEl) dateEl.innerText = now.toLocaleDateString('th-TH', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
             };
-            
             formatter();
             clockTimer = setInterval(formatter, 1000);
         }
 
-        // Handle Dark / Light mode switching
         function initTheme() {
-            if (config.theme === 'dark') {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
+            if (config.theme === 'dark') document.documentElement.classList.add('dark');
+            else document.documentElement.classList.remove('dark');
         }
 
         function toggleDarkMode() {
@@ -540,7 +520,6 @@
             localStorage.setItem('klongPinto_theme', config.theme);
         }
 
-        // UI Modals handler
         function toggleModal(id) {
             const modal = document.getElementById(id);
             if (modal.classList.contains('hidden')) {
@@ -560,7 +539,6 @@
             }
         }
 
-        // Synchronize setup values with App states
         function updateSyncIntervalLabel(val) {
             document.getElementById('sync-interval-label').innerText = val + ' วินาที';
         }
@@ -589,44 +567,31 @@
             fetchOrders();
         }
 
-        // Safe parser to handle Thai BE format year 25xx and string types properly
         function parseSafeDate(dateVal) {
             if (!dateVal) return new Date();
             if (dateVal instanceof Date) return dateVal;
-            
             let dateStr = String(dateVal).trim();
-            
             let matchBE = dateStr.match(/\b(25\d{2})\b/);
             if (matchBE) {
                 let ceYear = parseInt(matchBE[1]) - 543;
                 dateStr = dateStr.replace(matchBE[1], String(ceYear));
             }
-            
             let parsed = new Date(dateStr);
             if (isNaN(parsed.getTime())) {
                 let parts = dateStr.split(/[\/\-\s]/);
                 if (parts.length >= 3) {
-                    if (parts[0].length === 4) {
-                        parsed = new Date(parts[0], parts[1] - 1, parts[2]);
-                    } else if (parts[2].length === 4) {
-                        parsed = new Date(parts[2], parts[1] - 1, parts[0]);
-                    }
+                    if (parts[0].length === 4) parsed = new Date(parts[0], parts[1] - 1, parts[2]);
+                    else if (parts[2].length === 4) parsed = new Date(parts[2], parts[1] - 1, parts[0]);
                 }
             }
-            
             return isNaN(parsed.getTime()) ? new Date() : parsed;
         }
 
-        // Helper: Format Date string
         function getLocalDateString(timestamp) {
             const d = new Date(timestamp);
-            const yyyy = d.getFullYear();
-            const mm = String(d.getMonth() + 1).padStart(2, '0');
-            const dd = String(d.getDate()).padStart(2, '0');
-            return `${yyyy}-${mm}-${dd}`;
+            return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
         }
 
-        // ทำความสะอาดและจำกัดขนาดออเดอร์สะสมไม่ให้เกิน 300 รายการ ป้องกัน LocalStorage เต็มและช้า
         function pruneOldOrders() {
             if (orders.length > 300) {
                 orders.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
@@ -634,19 +599,16 @@
             }
         }
 
-        // Save simulated or loaded orders to LocalStorage
         function saveOrdersToStorage() {
             pruneOldOrders();
             try {
                 localStorage.setItem('klongPinto_orders_data', JSON.stringify(orders));
             } catch (e) {
-                console.log("LocalStorage write failed, pruning cache further...", e);
                 orders = orders.slice(0, 100);
                 localStorage.setItem('klongPinto_orders_data', JSON.stringify(orders));
             }
         }
 
-        // Load existing orders from LocalStorage
         function loadOrdersFromStorage() {
             const stored = localStorage.getItem('klongPinto_orders_data');
             if (stored) {
@@ -656,45 +618,35 @@
                         o.timestamp = parseSafeDate(o.timestamp);
                         o.updatedAt = parseSafeDate(o.updatedAt);
                     });
-                } catch (e) {
-                    orders = [];
-                }
+                } catch (e) { orders = []; }
             } else {
                 orders = [];
                 saveOrdersToStorage();
             }
         }
 
-        // Sync and Fetch logic
         function startSyncTimer() {
             if (syncTimer) clearInterval(syncTimer);
             syncTimer = setInterval(fetchOrders, config.syncInterval * 1000);
         }
 
-        // Pull orders from External Google Sheets URL
         async function fetchOrders() {
             const syncIcon = document.getElementById('sync-icon');
             const syncStatus = document.getElementById('sync-status');
-            
             if (syncIcon) syncIcon.classList.add('animate-spin');
-            
             if (!config.apiUrl) {
                 if (syncIcon) syncIcon.classList.remove('animate-spin');
                 if (syncStatus) syncStatus.innerText = "กรุณาตั้งค่า URL การเชื่อมต่อ";
-                renderBoard();
+                applyFiltersAndRender();
                 return;
             }
-
             try {
-                if (syncStatus) syncStatus.innerText = "";
                 const response = await fetch(config.apiUrl);
                 if (!response.ok) throw new Error('Network response not ok');
                 const data = await response.json();
-                
                 processExternalSync(data);
-                if (syncStatus) syncStatus.innerText = "";
+                if (syncStatus) syncStatus.innerText = "ซิงค์อัตโนมัติ: เปิดใช้งาน";
             } catch (error) {
-                console.log("Fetch failed, keeping local memory orders:", error);
                 if (syncStatus) syncStatus.innerText = "ตัดการเชื่อมต่อ (ใช้ออฟไลน์แทน)";
             } finally {
                 if (syncIcon) syncIcon.classList.remove('animate-spin');
@@ -702,152 +654,87 @@
             }
         }
 
-        // Helper to format Item from various structures safely
         function parseItemData(item) {
             if (typeof item === 'object' && item !== null) {
                 const name = item.name || item.menu || item.itemName || item.title || '';
                 const qty = item.qty || item.quantity || item.amount || '';
-                if (!name) return JSON.stringify(item);
                 return qty ? `${name} x ${qty}` : name;
             }
             return String(item).trim();
         }
 
-        // Send status back to Google Sheets Web App to achieve true multi-device sync
         function sendSyncStatusToSheets(orderId, newStatus) {
             if (!config.apiUrl) return;
-            
-            // ส่งอัปเดตสถานะแบบ POST ไปหา Google Apps Script ส่วนกลางของคุณโดยตรง
             fetch(config.apiUrl, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'text/plain'
-                },
-                body: JSON.stringify({
-                    action: 'updateStatus',
-                    id: orderId,
-                    status: newStatus
-                })
-            })
-            .then(() => {
-                console.log(`Cloud status updated: ${orderId} -> ${newStatus}`);
-            })
-            .catch(err => {
-                console.error("Cloud status sync failed:", err);
-            });
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify({ action: 'updateStatus', id: orderId, status: newStatus })
+            }).catch(err => console.error("Cloud status sync failed:", err));
         }
 
-        // Process Incoming Cloud Data safely with O(1) Lookups & Forced Takeaway Delivery Types
         function processExternalSync(incomingList) {
             let hasNew = false;
             const todayStr = getLocalDateString(Date.now());
 
-            // 1. กรองเฉพาะวันที่สอดคล้องกับ dateFilterMode ทันทีเพื่อความเร็ว
             let targetIncoming = incomingList.filter(incoming => {
-                const rawDate = incoming.date || incoming.timestamp;
-                const parsedTimestamp = parseSafeDate(rawDate);
-                const orderDateStr = getLocalDateString(parsedTimestamp);
-
-                if (dateFilterMode === 'today') {
-                    return orderDateStr === todayStr;
-                } else if (dateFilterMode === 'custom') {
-                    return orderDateStr === customDateValue;
-                }
+                const orderDateStr = getLocalDateString(parseSafeDate(incoming.date || incoming.timestamp));
+                if (dateFilterMode === 'today') return orderDateStr === todayStr;
+                if (dateFilterMode === 'custom') return orderDateStr === customDateValue;
                 return true; 
             });
 
-            // 2. จำกัดขีดสุงสุด 100 ออเดอร์เมื่อกดเลือก 'ทั้งหมด' เพื่อป้องกันเครื่องค้าง
             if (dateFilterMode === 'all' && targetIncoming.length > 100) {
-                targetIncoming.sort((a, b) => {
-                    const dateA = parseSafeDate(a.date || a.timestamp);
-                    const dateB = parseSafeDate(b.date || b.timestamp);
-                    return dateB - dateA;
-                });
+                targetIncoming.sort((a, b) => parseSafeDate(b.date || b.timestamp) - parseSafeDate(a.date || a.timestamp));
                 targetIncoming = targetIncoming.slice(0, 100);
             }
 
-            // สแกนและจัดโครงสร้างข้อมูลออเดอร์ใหม่ทั้งหมดจาก Google Sheets
             const parsedIncomingOrders = targetIncoming.map(incoming => {
                 const realOrderNo = incoming.orderNo || incoming.orderId || incoming.id || '';
-                const incomingId = incoming.id || incoming.orderId || realOrderNo || '';
-                
                 let parsedItems = [];
-                if (Array.isArray(incoming.items)) {
-                    parsedItems = incoming.items.map(item => parseItemData(item));
-                } else if (typeof incoming.items === 'string') {
+                if (Array.isArray(incoming.items)) parsedItems = incoming.items.map(item => parseItemData(item));
+                else if (typeof incoming.items === 'string') {
                     try {
                         const decoded = JSON.parse(incoming.items);
-                        if (Array.isArray(decoded)) {
-                            parsedItems = decoded.map(item => parseItemData(item));
-                        } else {
-                            parsedItems = incoming.items.split(',').map(i => parseItemData(i));
-                        }
-                    } catch (e) {
-                        parsedItems = incoming.items.split(',').map(i => parseItemData(i));
-                    }
-                } else if (incoming.items && typeof incoming.items === 'object') {
-                    parsedItems = [parseItemData(incoming.items)];
+                        parsedItems = Array.isArray(decoded) ? decoded.map(item => parseItemData(item)) : incoming.items.split(',').map(i => parseItemData(i));
+                    } catch (e) { parsedItems = incoming.items.split(',').map(i => parseItemData(i)); }
                 }
-
-                const rawDate = incoming.date || incoming.timestamp;
-                const parsedTimestamp = parseSafeDate(rawDate);
-
                 let orderType = incoming.type || "กลับบ้าน";
-                if (orderType === "ทานที่ร้าน" || orderType === "Dine In" || orderType === " Dine In") {
-                    orderType = "กลับบ้าน";
-                }
+                if (["ทานที่ร้าน", "Dine In", " Dine In"].includes(orderType)) orderType = "กลับบ้าน";
 
                 return {
-                    id: incomingId,
+                    id: incoming.id || incoming.orderId || realOrderNo || '',
                     orderNo: realOrderNo,
                     table: incoming.table || (incoming.customer && incoming.customer.name) || "ลูกค้าเดลิเวอรี",
                     type: orderType,
                     items: parsedItems,
                     note: incoming.note || (incoming.customer && incoming.customer.address) || incoming.notes || "-",
                     status: incoming.status || 'billed',
-                    timestamp: parsedTimestamp,
+                    timestamp: parseSafeDate(incoming.date || incoming.timestamp),
                     updatedAt: new Date()
                 };
             });
 
-            // เปรียบเทียบรหัสออเดอร์เดิมเพื่อตรวจจับออเดอร์ใหม่ (Genuine New Orders) และส่งเสียงเตือน
             const currentOrderIds = new Set(orders.map(o => o.id));
             parsedIncomingOrders.forEach(incoming => {
-                if (incoming.status === 'billed' && !currentOrderIds.has(incoming.id)) {
-                    hasNew = true;
-                }
+                if (incoming.status === 'billed' && !currentOrderIds.has(incoming.id)) hasNew = true;
             });
 
-            // 🌟 [ระบบอ้างอิง Google Sheets เป็นหลัก]:
-            // แทนการดึงเฉพาะออเดอร์ใหม่ เราจะทำการเขียนทับข้อมูลในช่วงวันที่ถูกเลือกด้วยรายการที่เพิ่งดึงมาจาก Google Sheet ทั้งหมด
-            // ทำให้หากออเดอร์บน Google Sheet ถูกลบ หรือ แก้ไขข้อมูล บอร์ด KDS จะอัปเดตหายไปหรือแก้ไขตามทันทีใน 15 วินาที
             if (dateFilterMode === 'today') {
-                const nonTodayOrders = orders.filter(o => getLocalDateString(o.timestamp) !== todayStr);
-                const freshTodayOrders = parsedIncomingOrders.filter(o => getLocalDateString(o.timestamp) === todayStr);
-                orders = [...nonTodayOrders, ...freshTodayOrders];
+                orders = [...orders.filter(o => getLocalDateString(o.timestamp) !== todayStr), ...parsedIncomingOrders.filter(o => getLocalDateString(o.timestamp) === todayStr)];
             } else if (dateFilterMode === 'custom') {
-                const nonCustomOrders = orders.filter(o => getLocalDateString(o.timestamp) !== customDateValue);
-                const freshCustomOrders = parsedIncomingOrders.filter(o => getLocalDateString(o.timestamp) === customDateValue);
-                orders = [...nonCustomOrders, ...freshCustomOrders];
-            } else {
-                orders = parsedIncomingOrders;
-            }
+                orders = [...orders.filter(o => getLocalDateString(o.timestamp) !== customDateValue), ...parsedIncomingOrders.filter(o => getLocalDateString(o.timestamp) === customDateValue)];
+            } else { orders = parsedIncomingOrders; }
 
             saveOrdersToStorage();
 
-            // ส่งเสียงเตือนเฉพาะออเดอร์คีย์สั่งเข้ามาใหม่ของวันนี้จริง ๆ และต้องไม่ใช่การโหลดครั้งแรกของหน้าจอ KDS
             if (hasNew && !isFirstLoad) {
                 playChimeSound('new-order');
                 speakThaiMessage("มีออเดอร์เข้ามาใหม่ครับ");
             }
-
-            if (isFirstLoad) {
-                isFirstLoad = false;
-            }
+            if (isFirstLoad) isFirstLoad = false;
         }
 
-        // Toggle individual food item ticked state (Ticking off specific food dish inside card)
         function toggleItemTicked(orderId, itemName) {
             const tickKey = `${orderId}_${itemName}`;
             itemTickedMap[tickKey] = !itemTickedMap[tickKey];
@@ -855,81 +742,53 @@
             applyFiltersAndRender();
         }
 
-        // Handle card transitions
         function changeOrderStatus(orderId, newStatus) {
             const order = orders.find(o => o.id === orderId);
             if (order) {
                 order.status = newStatus;
                 order.updatedAt = new Date();
-                
-                // Save status changes in local persistence map
                 const localStatusMap = JSON.parse(localStorage.getItem('kds_status_map') || '{}');
                 localStatusMap[orderId] = newStatus;
                 localStorage.setItem('kds_status_map', JSON.stringify(localStatusMap));
-
                 saveOrdersToStorage();
-                
-                // ไม่มีทั้ง playChimeSound หรือ speakThaiMessage ทำงานในส่วนนี้ เพื่อไม่ให้เกิดเสียงรบกวนครัวขณะเปลี่ยนแท็บปรุง
-
-                // ส่งข้อมูลสถานะใหม่กลับไปบันทึกลง Google Sheet กลาง เพื่อให้เครื่องอื่น ๆ ซิงค์ตรงกัน
                 sendSyncStatusToSheets(orderId, newStatus);
-                
                 applyFiltersAndRender();
             }
         }
 
-        // Clear completed history action triggered from modal
         function clearCompletedAction() {
             orders = orders.filter(o => o.status !== 'completed');
-            
             localStorage.removeItem('kds_status_map');
             localStorage.removeItem('kds_item_ticked_map');
             itemTickedMap = {};
-            
             saveOrdersToStorage();
             toggleModal('confirm-clear-modal');
             applyFiltersAndRender();
         }
 
-        // Set Filter parameters
         function setDateRange(mode) {
             dateFilterMode = mode;
-            
             document.getElementById('date-btn-today').className = "px-3 py-1.5 rounded-lg transition-all text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
             document.getElementById('date-btn-all').className = "px-3 py-1.5 rounded-lg transition-all text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
             document.getElementById('date-btn-custom').className = "px-3 py-1.5 rounded-lg transition-all text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 flex items-center space-x-1";
 
-            if (mode === 'today') {
-                document.getElementById('date-btn-today').className = "px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm";
-                document.getElementById('custom-date-label').innerText = "ระบุวัน";
-            } else if (mode === 'all') {
-                document.getElementById('date-btn-all').className = "px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm";
-                document.getElementById('custom-date-label').innerText = "ระบุวัน";
-            }
-            
+            if (mode === 'today') document.getElementById('date-btn-today').className = "px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm";
+            else if (mode === 'all') document.getElementById('date-btn-all').className = "px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm";
             orders = [];
             fetchOrders();
         }
 
         function applyCustomDate() {
             const dateVal = document.getElementById('custom-date-picker').value;
-            if (!dateVal) {
-                return;
-            }
+            if (!dateVal) return;
             customDateValue = dateVal;
             dateFilterMode = 'custom';
-            
             document.getElementById('date-btn-today').className = "px-3 py-1.5 rounded-lg transition-all text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
             document.getElementById('date-btn-all').className = "px-3 py-1.5 rounded-lg transition-all text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
             document.getElementById('date-btn-custom').className = "px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm flex items-center space-x-1";
-            
             const dateParts = dateVal.split('-');
-            if (dateParts.length === 3) {
-                document.getElementById('custom-date-label').innerText = `${dateParts[2]}/${dateParts[1]}`;
-            }
-
+            if (dateParts.length === 3) document.getElementById('custom-date-label').innerText = `${dateParts[2]}/${dateParts[1]}`;
             toggleModal('custom-date-modal');
-            
             orders = [];
             fetchOrders();
         }
@@ -938,99 +797,51 @@
             sortOrder = order;
             document.getElementById('sort-btn-fifo').className = "px-3 py-1.5 rounded-lg transition-all text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
             document.getElementById('sort-btn-lifo').className = "px-3 py-1.5 rounded-lg transition-all text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
-
-            if (order === 'fifo') {
-                document.getElementById('sort-btn-fifo').className = "px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm";
-            } else {
-                document.getElementById('sort-btn-lifo').className = "px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm";
-            }
+            if (order === 'fifo') document.getElementById('sort-btn-fifo').className = "px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm";
+            else document.getElementById('sort-btn-lifo').className = "px-3 py-1.5 rounded-lg transition-all text-amber-600 bg-white dark:bg-slate-900 shadow-sm";
             applyFiltersAndRender();
         }
 
-        function toggleMenuSummaryCollapse() {
-            isSummaryCollapsed = !isSummaryCollapsed;
-            const container = document.getElementById('aggregated-menu-list');
-            const icon = document.getElementById('collapse-summary-icon');
-            const text = document.getElementById('collapse-summary-text');
-            
-            if (isSummaryCollapsed) {
-                container.classList.add('hidden');
-                text.innerText = "แสดงแถบสรุป";
-                icon.className = "fa-solid fa-chevron-down";
-            } else {
-                container.classList.remove('hidden');
-                text.innerText = "ย่อแถบสรุป";
-                icon.className = "fa-solid fa-chevron-up";
-            }
-        }
-
-        // Apply filters & render
         function applyFiltersAndRender() {
             const searchQuery = document.getElementById('search-filter').value.toLowerCase().trim();
             const todayStr = getLocalDateString(Date.now());
 
-            // 1. Filter original list by date and query
             let filtered = orders.filter(o => {
-                // Date logic
                 const orderDateStr = getLocalDateString(o.timestamp);
                 if (dateFilterMode === 'today' && orderDateStr !== todayStr) return false;
                 if (dateFilterMode === 'custom' && orderDateStr !== customDateValue) return false;
 
-                // Search logic
                 if (searchQuery) {
-                    const matchesTable = o.table.toLowerCase().includes(searchQuery);
-                    const matchesOrderNo = o.orderNo.toLowerCase().includes(searchQuery);
-                    const matchesNote = o.note.toLowerCase().includes(searchQuery);
-                    const matchesItems = o.items.some(item => {
-                        const strItem = typeof item === 'object' ? JSON.stringify(item) : String(item);
-                        return strItem.toLowerCase().includes(searchQuery);
-                    });
-                    return matchesTable || matchesOrderNo || matchesNote || matchesItems;
+                    return o.table.toLowerCase().includes(searchQuery) || 
+                           o.orderNo.toLowerCase().includes(searchQuery) || 
+                           o.note.toLowerCase().includes(searchQuery) || 
+                           o.items.some(item => String(item).toLowerCase().includes(searchQuery));
                 }
                 return true;
             });
 
-            // 2. Sort sequence
-            filtered.sort((a, b) => {
-                const timeA = new Date(a.timestamp).getTime();
-                const timeB = new Date(b.timestamp).getTime();
-                return sortOrder === 'fifo' ? timeA - timeB : timeB - timeA;
-            });
+            filtered.sort((a, b) => sortOrder === 'fifo' ? a.timestamp - b.timestamp : b.timestamp - a.timestamp);
 
-            // Render Kanban and Header metrics
             renderBoard(filtered);
             aggregateMenuStats(filtered);
         }
 
-        // Helper: Format elapsed duration nicely
         function getElapsedString(timestamp) {
-            const now = new Date();
-            const diffMs = now - new Date(timestamp);
-            const diffMin = Math.floor(diffMs / 60000);
-            
-            if (diffMin < 1) return 'เมื่อครู่';
-            return `${diffMin} นาทีที่แล้ว`;
+            const diffMin = Math.floor((new Date() - new Date(timestamp)) / 60000);
+            return diffMin < 1 ? 'เมื่อครู่' : `${diffMin} นาทีที่แล้ว`;
         }
 
-        // Helper: Check if card violates SLA (8 Minutes warning)
         function checkSLAViolation(timestamp, status) {
-            if (status === 'completed' || status === 'ready') return false;
-            const now = new Date();
-            const diffMs = now - new Date(timestamp);
-            const diffMin = Math.floor(diffMs / 60000);
-            return diffMin >= 8;
+            if (['completed', 'ready'].includes(status)) return false;
+            return Math.floor((new Date() - new Date(timestamp)) / 60000) >= 8;
         }
 
-        // Extract and summarize active menu queues (แปลงเป็นระบบ Popup แท้จริง)
         function aggregateMenuStats(filteredList) {
             const counts = {};
             let totalQuantity = 0;
-            
             filteredList.forEach(o => {
-                // 🌟 [ปรับปรุงใหม่ข้อที่ 1]: ดึงสะสมสะยอดรวมทั้งหมดของรายการอาหารของ "ทั้งวัน" 
-                // โดยไม่สนใจและไม่แยกแยะสถานะใด ๆ (นับรวมทั้งหมดแม้จะส่งออกเสร็จสิ้นไปแล้วก็ตาม)
                 o.items.forEach(item => {
-                    const textItem = typeof item === 'object' ? parseItemData(item) : String(item);
+                    const textItem = parseItemData(item);
                     const match = textItem.match(/(.+?)(?:\s*x\s*(\d+))?$/);
                     if (match) {
                         const name = match[1].trim();
@@ -1044,210 +855,155 @@
             const summaryContainer = document.getElementById('aggregated-menu-list');
             const popupSummaryList = document.getElementById('popup-summary-list');
             const popupTotalText = document.getElementById('popup-total-text');
-
             const totalDistinctMenus = Object.keys(counts).length;
 
             if (totalDistinctMenus === 0) {
-                summaryContainer.innerHTML = `<span class="text-slate-400 text-xs font-light">ไม่มีรายการอาหารค้างปรุงในขณะนี้</span>`;
-                if (popupSummaryList) popupSummaryList.innerHTML = `<div class="text-center text-slate-400 text-xs py-8">ไม่มีรายการอาหารค้างปรุง</div>`;
-                if (popupTotalText) popupTotalText.innerText = `0 เมนู / 0 กล่อง`;
+                if (summaryContainer) summaryContainer.innerHTML = `<span class="text-slate-400 text-xs font-light">ไม่มีรายการอาหารค้างปรุงในขณะนี้</span>`;
                 return;
             }
 
-            // สร้างปุ่มสรุปยอดแสดงผลที่จุดสีเขียว
-            summaryContainer.innerHTML = `
-                <button onclick="openSummaryModal()" class="flex items-center space-x-2.5 bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/20 dark:hover:bg-amber-900/20 border border-amber-200 dark:border-amber-800/60 px-3 py-1.5 rounded-xl transition-all duration-200 group shadow-sm shrink-0">
-                    <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
-                    </span>
-                    <span class="text-xs font-semibold text-amber-800 dark:text-amber-400 flex items-center space-x-1">
-                        <span>ยอดออเดอร์สะสมวันนี้:</span>
-                        <strong class="text-slate-700 dark:text-slate-200 font-bold">${totalDistinctMenus} เมนู (${totalQuantity} กล่อง)</strong> 
-                    </span>
-                    <span class="text-[10px] bg-amber-500 hover:bg-amber-600 text-white font-bold px-2 py-0.5 rounded-lg flex items-center space-x-1 transition-colors">
-                        <span>ดูตารางสรุป</span>
-                        <i class="fa-solid fa-chart-simple text-[8px]"></i>
-                    </span>
-                </button>
-            `;
+            if (summaryContainer) {
+                summaryContainer.innerHTML = `
+                    <button onclick="openSummaryModal()" class="flex items-center space-x-2 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/60 px-2 py-1 rounded-xl transition-all shadow-sm shrink-0">
+                        <span class="text-[11px] font-semibold text-amber-800 dark:text-amber-400 flex items-center space-x-1">
+                            <span>สะสม:</span><strong>${totalDistinctMenus} เมนู (${totalQuantity} ก.)</strong> 
+                        </span>
+                    </button>
+                `;
+            }
 
-            // เตรียมข้อมูลสำหรับ Popup รายชื่ออาหารสะสม
             let popupHTML = '';
             Object.entries(counts).forEach(([menu, qty]) => {
                 popupHTML += `
-                    <div class="flex items-center justify-between p-3.5 bg-slate-50 dark:bg-slate-850/60 border border-slate-100 dark:border-slate-800/50 rounded-2xl shadow-sm">
-                        <span class="font-semibold text-slate-800 dark:text-slate-200 text-xs sm:text-sm leading-tight">${menu}</span>
-                        <span class="bg-amber-500 text-white font-bold text-xs px-3 py-1 rounded-xl shadow-md shadow-amber-500/10 flex-none">${qty} กล่อง</span>
+                    <div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-850/60 border border-slate-100 dark:border-slate-800/50 rounded-2xl">
+                        <span class="font-semibold text-slate-800 dark:text-slate-200 text-xs sm:text-sm">${menu}</span>
+                        <span class="bg-amber-500 text-white font-bold text-xs px-2.5 py-1 rounded-xl">${qty} กล่อง</span>
                     </div>
                 `;
             });
-
             if (popupSummaryList) popupSummaryList.innerHTML = popupHTML;
             if (popupTotalText) popupTotalText.innerText = `${totalDistinctMenus} เมนู / ${totalQuantity} กล่อง`;
         }
 
-        function openSummaryModal() {
-            toggleModal('summary-modal');
+        function openSummaryModal() { toggleModal('summary-modal'); }
+
+        function switchMobileTab(tabId) {
+            activeMobileTab = tabId;
+            document.querySelectorAll('.kds-column').forEach(col => col.classList.add('hidden'));
+            
+            const targetWrapper = document.getElementById(`wrapper-${tabId}`);
+            if(targetWrapper) targetWrapper.classList.remove('hidden');
+
+            const tabButtons = ['billed', 'cooking', 'ready', 'completed'];
+            const colors = { billed: 'text-blue-500', cooking: 'text-amber-500', ready: 'text-emerald-500', completed: 'text-slate-500 dark:text-slate-400' };
+            
+            tabButtons.forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                if(btn) {
+                    btn.className = `flex flex-col items-center justify-center font-medium text-xs flex-1 py-1 text-slate-400 dark:text-slate-500`;
+                }
+            });
+            
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            if(activeBtn) activeBtn.className = `flex flex-col items-center justify-center font-bold text-xs flex-1 py-1 ${colors[tabId]}`;
         }
 
-        // Render actual board elements
+        function checkResponsiveLayout() {
+            if (window.innerWidth < 768) {
+                switchMobileTab(activeMobileTab);
+            } else {
+                document.querySelectorAll('.kds-column').forEach(col => col.classList.remove('hidden'));
+            }
+        }
+        window.addEventListener('resize', checkResponsiveLayout);
+
         function renderBoard(targetList = null) {
             const list = targetList || orders;
-
             const colBilled = document.getElementById('col-billed');
             const colCooking = document.getElementById('col-cooking');
             const colReady = document.getElementById('col-ready');
             const colCompleted = document.getElementById('col-completed');
 
-            colBilled.innerHTML = '';
-            colCooking.innerHTML = '';
-            colReady.innerHTML = '';
-            colCompleted.innerHTML = '';
-
+            colBilled.innerHTML = ''; colCooking.innerHTML = ''; colReady.innerHTML = ''; colCompleted.innerHTML = '';
             let countBilled = 0, countCooking = 0, countReady = 0, countCompleted = 0;
 
-            // จัดกลุ่มเพื่อแสดงผลประวัติเสร็จสิ้นจำกัดเฉพาะ 15 รายการล่าสุด เพื่อความลื่นไหล
-            const completedRenderList = list
-                .filter(o => o.status === 'completed')
-                .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
-                .slice(0, 15);
-            
+            const completedRenderList = list.filter(o => o.status === 'completed').sort((a, b) => b.updatedAt - a.updatedAt).slice(0, 15);
             const completedRenderIds = new Set(completedRenderList.map(o => o.id));
 
             list.forEach(o => {
                 const isViolatingSLA = checkSLAViolation(o.timestamp, o.status);
                 const elapsedStr = getElapsedString(o.timestamp);
-                
-                let actionBtnHTML = '';
-                let statusBadgeStyle = '';
-                let containerClass = "p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900 hover:shadow-md transition-all duration-200";
-                
-                if (isViolatingSLA) {
-                    containerClass += " sla-alert-card";
-                }
+                let actionBtnHTML = '', statusBadgeStyle = '', containerClass = "p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900 hover:shadow-md transition-all duration-200";
+                if (isViolatingSLA) containerClass += " sla-alert-card";
 
                 if (o.status === 'billed') {
                     countBilled++;
                     statusBadgeStyle = "bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400";
                     actionBtnHTML = `
-                        <button onclick="changeOrderStatus('${o.id}', 'cooking')" class="flex-1 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold text-xs rounded-xl shadow-md shadow-amber-500/10 flex items-center justify-center space-x-2 transition-all">
-                            <i class="fa-solid fa-fire"></i>
-                            <span>รับออเดอร์ปรุง</span>
-                        </button>
-                    `;
+                        <button onclick="changeOrderStatus('${o.id}', 'cooking')" class="flex-1 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-xs rounded-xl shadow-md flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-fire"></i><span>รับออเดอร์ปรุง</span>
+                        </button>`;
                 } else if (o.status === 'cooking') {
                     countCooking++;
                     statusBadgeStyle = "bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400";
                     actionBtnHTML = `
                         <div class="flex gap-2 w-full">
-                            <button onclick="changeOrderStatus('${o.id}', 'billed')" class="px-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 rounded-xl transition-all" title="ย้อนกลับ">
-                                <i class="fa-solid fa-arrow-left"></i>
+                            <button onclick="changeOrderStatus('${o.id}', 'billed')" class="px-3 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded-xl"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button onclick="changeOrderStatus('${o.id}', 'ready')" class="flex-1 py-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold text-xs rounded-xl shadow-md flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-bell"></i><span>ปรุงเสร็จแล้ว</span>
                             </button>
-                            <button onclick="changeOrderStatus('${o.id}', 'ready')" class="flex-1 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs rounded-xl shadow-md shadow-emerald-500/10 flex items-center justify-center space-x-2 transition-all">
-                                <i class="fa-solid fa-bell"></i>
-                                <span>ปรุงเสร็จแล้ว</span>
-                            </button>
-                        </div>
-                    `;
+                        </div>`;
                 } else if (o.status === 'ready') {
                     countReady++;
                     statusBadgeStyle = "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400";
                     actionBtnHTML = `
                         <div class="flex gap-2 w-full">
-                            <button onclick="changeOrderStatus('${o.id}', 'cooking')" class="px-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 rounded-xl transition-all" title="ย้อนกลับ">
-                                <i class="fa-solid fa-arrow-left"></i>
+                            <button onclick="changeOrderStatus('${o.id}', 'cooking')" class="px-3 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded-xl"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button onclick="changeOrderStatus('${o.id}', 'completed')" class="flex-1 py-2.5 bg-gradient-to-r from-slate-600 to-slate-700 text-white font-bold text-xs rounded-xl shadow-sm flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-truck-ramp-box"></i><span>จัดส่งเรียบร้อย</span>
                             </button>
-                            <button onclick="changeOrderStatus('${o.id}', 'completed')" class="flex-1 py-2 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-bold text-xs rounded-xl shadow-sm flex items-center justify-center space-x-2 transition-all">
-                                <i class="fa-solid fa-truck-ramp-box"></i>
-                                <span>จัดส่งไรเดอร์เรียบร้อย</span>
-                            </button>
-                        </div>
-                    `;
+                        </div>`;
                 } else if (o.status === 'completed') {
                     countCompleted++;
                     statusBadgeStyle = "bg-slate-100 dark:bg-slate-850 text-slate-500 dark:text-slate-400";
                     actionBtnHTML = `
-                        <button onclick="changeOrderStatus('${o.id}', 'ready')" class="w-full py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 font-bold text-xs rounded-lg flex items-center justify-center space-x-1 transition-all">
-                            <i class="fa-solid fa-rotate-left"></i>
-                            <span>ดึงกลับมาใหม่</span>
-                        </button>
-                    `;
-                    
-                    if (!completedRenderIds.has(o.id)) {
-                        return; 
-                    }
+                        <button onclick="changeOrderStatus('${o.id}', 'ready')" class="w-full py-2 bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold text-xs rounded-lg flex items-center justify-center space-x-1">
+                            <i class="fa-solid fa-rotate-left"></i><span>ดึงกลับ</span>
+                        </button>`;
+                    if (!completedRenderIds.has(o.id)) return; 
                 }
 
-                // สลักระบบติ๊กรายการอาหารแยกชิ้น (Item Ticking Checkbox) เพื่อติดตามสถานะเมนูในครัวจริง
                 let itemsListHTML = '';
                 o.items.forEach(item => {
                     const cleanItemText = parseItemData(item);
-                    const tickKey = `${o.id}_${cleanItemText}`;
-                    const isTicked = !!itemTickedMap[tickKey];
-                    
-                    const textClass = isTicked 
-                        ? "line-through text-slate-400 dark:text-slate-500 font-light italic decoration-2 decoration-rose-500" 
-                        : "text-slate-800 dark:text-slate-200 font-semibold";
-                        
-                    const checkIcon = isTicked 
-                        ? '<i class="fa-solid fa-circle-check text-emerald-500 text-base"></i>' 
-                        : '<i class="fa-regular fa-circle text-slate-300 dark:text-slate-600 text-base hover:text-emerald-500 transition-colors"></i>';
-
+                    const isTicked = !!itemTickedMap[`${o.id}_${cleanItemText}`];
                     itemsListHTML += `
-                        <li onclick="toggleItemTicked('${o.id}', '${cleanItemText}')" class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/40 last:border-0 cursor-pointer select-none group">
+                        <li onclick="toggleItemTicked('${o.id}', '${cleanItemText}')" class="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-800/40 last:border-0 cursor-pointer select-none">
                             <div class="flex items-center space-x-2.5 max-w-[95%]">
-                                <span class="shrink-0 flex items-center justify-center">${checkIcon}</span>
-                                <span class="text-sm tracking-wide transition-all duration-200 group-hover:text-amber-500 ${textClass}">${cleanItemText}</span>
+                                <span>${isTicked ? '<i class="fa-solid fa-circle-check text-emerald-500 text-base"></i>' : '<i class="fa-regular fa-circle text-slate-300 text-base"></i>'}</span>
+                                <span class="text-sm ${isTicked ? 'line-through text-slate-400 italic' : 'text-slate-800 dark:text-slate-200 font-semibold'}">${cleanItemText}</span>
                             </div>
-                        </li>
-                    `;
+                        </li>`;
                 });
 
-                const borderStyles = {
-                    'billed': 'border-l-4 border-l-blue-500',
-                    'cooking': 'border-l-4 border-l-amber-500',
-                    'ready': 'border-l-4 border-l-emerald-500',
-                    'completed': 'border-l-4 border-l-slate-400'
-                };
+                const borderStyles = { billed: 'border-l-4 border-l-blue-500', cooking: 'border-l-4 border-l-amber-500', ready: 'border-l-4 border-l-emerald-500', completed: 'border-l-4 border-l-slate-400' };
 
                 const cardHTML = `
-                    <div class="${containerClass} ${borderStyles[o.status]} flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-2 mb-2">
-                                <div>
-                                    <h4 class="text-base font-bold tracking-tight text-slate-900 dark:text-slate-100">${o.table}</h4>
-                                    <span class="text-[10px] tracking-wider font-semibold text-slate-400 block">${o.orderNo} | ${o.type}</span>
-                                </div>
-                                <div class="text-right">
-                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold ${statusBadgeStyle}">
-                                        ${elapsedStr}
-                                    </span>
-                                    ${isViolatingSLA ? `
-                                        <span class="block text-[9px] font-bold text-rose-500 uppercase mt-1 tracking-wide animate-pulse">
-                                            ⚠️ ล่าช้า! เกิน 8 นาที
-                                        </span>
-                                    ` : ''}
-                                </div>
+                    <div class="${containerClass} ${borderStyles[o.status]}">
+                        <div class="flex justify-between items-start gap-2 mb-2">
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900 dark:text-slate-100">${o.table}</h4>
+                                <span class="text-[10px] text-slate-400 block font-medium">${o.orderNo} | ${o.type}</span>
                             </div>
-
-                            <ul class="my-3 space-y-1">
-                                ${itemsListHTML}
-                            </ul>
-
-                            ${o.note && o.note !== '-' ? `
-                                <div class="bg-rose-50/50 dark:bg-rose-950/20 text-rose-600 dark:text-rose-400 p-2 rounded-xl text-xs flex items-start space-x-1.5 mb-4 border border-rose-100/50 dark:border-rose-950/40">
-                                    <i class="fa-regular fa-comment-dots mt-0.5 flex-none"></i>
-                                    <span class="font-medium">${o.note}</span>
-                                </div>
-                            ` : ''}
+                            <div class="text-right shrink-0">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold ${statusBadgeStyle}">${elapsedStr}</span>
+                                ${isViolatingSLA ? '<span class="block text-[9px] font-bold text-rose-500 animate-pulse mt-1">⚠️ เกิน 8 นาที</span>' : ''}
+                            </div>
                         </div>
-
-                        <div class="mt-2 pt-2 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between">
-                            ${actionBtnHTML}
-                        </div>
-                    </div>
-                `;
+                        <ul class="my-3 space-y-0.5">${itemsListHTML}</ul>
+                        ${o.note && o.note !== '-' ? `<div class="bg-rose-50/50 dark:bg-rose-950/20 text-rose-600 dark:text-rose-400 p-2 rounded-xl text-xs mb-3 border border-rose-100/50">${o.note}</div>` : ''}
+                        <div class="mt-2 pt-2 border-t border-slate-100 dark:border-slate-800/60">${actionBtnHTML}</div>
+                    </div>`;
 
                 if (o.status === 'billed') colBilled.innerHTML += cardHTML;
                 else if (o.status === 'cooking') colCooking.innerHTML += cardHTML;
@@ -1255,53 +1011,38 @@
                 else if (o.status === 'completed') colCompleted.innerHTML += cardHTML;
             });
 
-            document.getElementById('badge-billed').innerText = countBilled;
-            document.getElementById('badge-cooking').innerText = countCooking;
-            document.getElementById('badge-ready').innerText = countReady;
-            document.getElementById('badge-completed').innerText = countCompleted;
-
-            document.getElementById('stat-billed').innerText = countBilled;
-            document.getElementById('stat-cooking').innerText = countCooking;
-            document.getElementById('stat-ready').innerText = countReady;
-            document.getElementById('stat-completed').innerText = countCompleted;
+            const badges = ['billed', 'cooking', 'ready', 'completed'];
+            const counts = [countBilled, countCooking, countReady, countCompleted];
+            badges.forEach((b, i) => {
+                const badge = document.getElementById(`badge-${b}`);
+                const stat = document.getElementById(`stat-${b}`);
+                const tabCount = document.getElementById(`tab-count-${b}`);
+                if(badge) badge.innerText = counts[i];
+                if(stat) stat.innerText = counts[i];
+                if(tabCount) tabCount.innerText = counts[i];
+            });
 
             checkEmptyStates(countBilled, countCooking, countReady, countCompleted);
+            checkResponsiveLayout();
         }
 
         function checkEmptyStates(cb, cc, cr, cd) {
-            const emptyTemplate = (msg) => `
-                <div class="flex flex-col items-center justify-center py-16 text-slate-300 dark:text-slate-700">
-                    <i class="fa-solid fa-circle-check text-4xl mb-3 opacity-40"></i>
-                    <p class="text-xs font-light">${msg}</p>
-                </div>
-            `;
-            
-            if (cb === 0) document.getElementById('col-billed').innerHTML = emptyTemplate('ไม่มีออเดอร์ค้างรับบิล');
-            if (cc === 0) document.getElementById('col-cooking').innerHTML = emptyTemplate('ไม่มีออเดอร์ค้างปรุง');
-            if (cr === 0) document.getElementById('col-ready').innerHTML = emptyTemplate('ไม่มีคิวเดลิเวอรีรอส่งในขณะนี้');
-            if (cd === 0) document.getElementById('col-completed').innerHTML = emptyTemplate('ไม่มีประวัติเสร็จสิ้นวันนี้');
+            const empty = (msg) => `<div class="flex flex-col items-center justify-center py-12 text-slate-300 dark:text-slate-700"><i class="fa-solid fa-circle-check text-3xl mb-2 opacity-40"></i><p class="text-xs">${msg}</p></div>`;
+            if (cb === 0) document.getElementById('col-billed').innerHTML = empty('ไม่มีออเดอร์ค้างรับบิล');
+            if (cc === 0) document.getElementById('col-cooking').innerHTML = empty('ไม่มีออเดอร์ค้างปรุง');
+            if (cr === 0) document.getElementById('col-ready').innerHTML = empty('ไม่มีคิวรอส่งในขณะนี้');
+            if (cd === 0) document.getElementById('col-completed').innerHTML = empty('ไม่มีประวัติเสร็จสิ้นวันนี้');
         }
 
-        // Silent Refresh intervals for times/SLA refresh (every 30 seconds)
-        setInterval(() => {
-            applyFiltersAndRender();
-        }, 30000);
+        setInterval(() => { applyFiltersAndRender(); }, 30000);
 
-        // System Startup
         window.onload = function() {
-            initTheme();
-            runClock();
-            
+            initTheme(); runClock();
             document.getElementById('custom-date-picker').value = getLocalDateString(Date.now());
             customDateValue = getLocalDateString(Date.now());
-
             loadOrdersFromStorage();
-            
-            // ใช้คิวใหม่สุด (LIFO) ก่อนเสมอตั้งแต่เริ่มระบบ
             setSortOrder('lifo');
-            
-            fetchOrders();
-            startSyncTimer();
+            fetchOrders(); startSyncTimer();
         };
     </script>
 </body>
