@@ -19,11 +19,16 @@ jobs:
         run: |
           npm install
 
+      # ✨ ขั้นตอนเสริมที่เพิ่มเข้ามา: สั่งสร้างไอคอนแอปจากโฟลเดอร์ assets ก่อนการซิงค์
+      - name: Generate App Icons
+        run: |
+          npm run icon-gen
+
       - name: Build Web Code and Sync
         run: |
           # สร้างโฟลเดอร์ iOS ขึ้นมาใหม่ในกรณีที่ใน Git ไม่มี
           npx cap add ios || true
-          # ทำการอัปเดตโค้ดเว็บและปลั๊กอินเข้าตัวโปรเจกต์ iOS
+          # ทำการอัปเดตโค้ดเว็บ ปลั๊กอิน และไอคอนที่เพิ่งสร้างเข้าตัวโปรเจกต์ iOS
           npx cap sync ios
 
       - name: Compile iOS Project to .app
