@@ -1,11 +1,11 @@
 name: Build iOS IPA 
 
 on:
-  workflow_dispatch: # ช่วยให้คุณพี่กดสั่งบิลด์แอปเองได้จากหน้าเว็บ GitHub
+  workflow_dispatch: 
 
 jobs:
   build:
-    runs-on: macos-14 # อัปเดตเป็น macOS 14 (Apple Silicon M-series Core)
+    runs-on: macos-14 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -17,23 +17,25 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm install
-
-      # ✨ ขั้นตอนเสริมที่เพิ่มเข้ามา: สั่งสร้างไอคอนแอปจากโฟลเดอร์ assets ก่อนการซิงค์
-      - name: Generate App Icons
-        run: |
-          npm run icon-gen
+          npm install --include=dev
 
       - name: Build Web Code and Sync
         run: |
-          # สร้างโฟลเดอร์ iOS ขึ้นมาใหม่ในกรณีที่ใน Git ไม่มี
+          # 1. สร้างโฟลเดอร์ ios ขึ้นมาใหม่ก่อน (ถ้ายังไม่มี)
           npx cap add ios || true
-          # ทำการอัปเดตโค้ดเว็บ ปลั๊กอิน และไอคอนที่เพิ่งสร้างเข้าตัวโปรเจกต์ iOS
+
+      # ✨ ย้ายมาอยู่ตรงนี้: ต้องรันหลังจากแตกโฟลเดอร์ ios เสร็จแล้ว แต่ต้องก่อนสั่ง sync
+      - name: Generate App Icons
+        run: |
+          npx capacitor-assets generate --ios
+
+      - name: Sync Project
+        run: |
+          # 2. ทำการซิงค์ข้อมูลและอัปเดตไฟล์ไอคอนเข้าสิทธิ์ระบบ Xcode
           npx cap sync ios
 
       - name: Compile iOS Project to .app
         run: |
-          # บิลด์แอปแบบไม่ใช้ใบรับรอง Apple Developer
           xcodebuild -workspace ios/App/App.xcworkspace \
                      -scheme App \
                      -configuration Release \
@@ -45,7 +47,6 @@ jobs:
 
       - name: Package .app into .ipa (The Sideload Hack)
         run: |
-          # สร้างโฟลเดอร์ Payload และนำแอปไปแพ็กเป็น .ipa ตามมาตรฐานของ iOS
           mkdir -p Payload
           cp -r $GITHUB_WORKSPACE/build/App.app Payload/
           zip -r KPT-kds.ipa Payload
